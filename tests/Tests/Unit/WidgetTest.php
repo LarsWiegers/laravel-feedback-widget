@@ -14,6 +14,6 @@ final class WidgetTest extends TestCase
     public function test_it_renders()
     {
         $content = $this->getComponentRenderedContent('<x-feedback-widget />');
-        $this->assertStringContainsString('', $content);
+        $this->assertStringContainsString('test', $content);
     }
 }

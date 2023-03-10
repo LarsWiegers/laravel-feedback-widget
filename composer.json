@@ -40,7 +40,8 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "resources": "npx tailwindcss -i ./resources/css/main.css -o ./resources/css/output.css --watch"
 
     },
     "config": {
@@ -51,7 +52,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "LaravelFeedbackWidgetServiceProvider"
+                "Larswiegers\\LaravelFeedbackWidget\\LaravelFeedbackWidgetServiceProvider"
             ],
             "aliases": {
                 "LaravelFeedbackWidget": "Larswiegers\\LaravelFeedbackWidget\\LaravelFeedbackWidgetFacade"

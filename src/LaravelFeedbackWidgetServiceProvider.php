@@ -3,7 +3,7 @@
 namespace Larswiegers\LaravelFeedbackWidget;
 
 use Illuminate\Support\ServiceProvider;
-use Larswiegers\LaravelFeedbackWidget\Components\FeedbackWidget;
+use Larswiegers\LaravelFeedbackWidget\Components\Widget;
 
 class LaravelFeedbackWidgetServiceProvider extends ServiceProvider
 {
@@ -36,20 +36,15 @@ class LaravelFeedbackWidgetServiceProvider extends ServiceProvider
             ], 'assets');*/
 
             // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-translations-checker'),
-            ], 'lang');*/
-
-            $this->loadViewComponentsAs('feedback', [
-                'widget' => FeedbackWidget::class,
-            ]);
-
-            $this->loadViewsFrom(__DIR__.'/../resources/views', 'widgets');
 
             // Registering package commands.
-             $this->commands([
-             ]);
         }
+
+        $this->publishes([
+                __DIR__.'/../resources/css' => public_path('vendor/laravel-translations-checker/css'),
+        ], 'laravel-translations-checker');
+        $this->loadViewComponentsAs('feedback', [Widget::class]);
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'widgets');
     }
 
     /**

@@ -45,6 +45,7 @@ class LaravelFeedbackWidgetServiceProvider extends ServiceProvider
         ], 'laravel-translations-checker');
         $this->loadViewComponentsAs('feedback', [Widget::class]);
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'widgets');
+        $this->loadViewsFrom(__DIR__.'/../resources/testing', 'testing');
     }
 
     /**
